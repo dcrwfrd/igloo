@@ -78,7 +78,7 @@
   };
 
   config = let
-    flakeCfg = config.flake.fractl;
+    flakeCfg = config.flake.fractal;
     scanDirs = import ./scanDirs.nix { inherit lib; };
     mkUser = import ./mkUser.nix { inherit inputs lib flakeCfg scanDirs; };
     mkNixosConfigurations = import ./mkHost.nix { inherit inputs lib flakeCfg mkUser scanDirs; };
