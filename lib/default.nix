@@ -2,7 +2,7 @@
 
 {
   options = {
-    flake.fractl = {
+    flake.fractal = {
       networkName = lib.mkOption {
         type = lib.types.str;
         default = "nixos";
