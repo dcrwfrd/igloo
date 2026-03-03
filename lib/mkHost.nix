@@ -23,13 +23,13 @@ let
 
         {
           nixpkgs.overlays = overlays;
-          networking.hostName = "${flakeCfg.networkName}-${host}";
+          networking.hostName = "${host}";
         }
       ] ++ extraModules;
     };
 
   mkHost = host: {
-    name = "${flakeCfg.networkName}-${host}";
+    name = "${host}";
     value = mkNixosConfiguration host;
   };
 

@@ -6,7 +6,7 @@
       networkName = lib.mkOption {
         type = lib.types.str;
         default = "nixos";
-        example = "fractl";
+        example = "home";
       };
 
       system = lib.mkOption {
@@ -17,34 +17,34 @@
       paths = {
         users = lib.mkOption {
           type = lib.types.path;
-          default = "${self}/config/user";
+          default = "${self}/configs/users";
         };
 
         hosts = lib.mkOption {
           type = lib.types.path;
-          default = "${self}/config/host";
+          default = "${self}/configs/hosts";
         };
 
         nixosModules = lib.mkOption {
           type = lib.types.path;
-          default = "${self}/module/nixos";
+          default = "${self}/modules/nixos";
         };
 
         homeModules = lib.mkOption {
           type = lib.types.path;
-          default = "${self}/module/home";
+          default = "${self}/modules/home-manager";
         };
 
         overlays = lib.mkOption {
           type = lib.types.path;
-          default = "${self}/overlay";
+          default = "${self}/overlays";
         };
 
-        extraModulePaths = lib.mkOption {
-          type = lib.types.listOf lib.types.path;
-          default = [ ];
-          example = [ ./module/example ./example ];
-        };
+        #  extraModulePaths = lib.mkOption {
+        #  type = lib.types.listOf lib.types.path;
+        #  default = [ ];
+        #  example = [ ./module/example ./example ];
+        #};
       };
 
       specialArgs = lib.mkOption {
