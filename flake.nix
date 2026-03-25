@@ -1,5 +1,5 @@
 {
-  description = "boreal-nix - A modular NixOS configuration framework";
+  description = "Igloo - A modular NixOS configuration framework";
 
   inputs = {
     flake-parts.url = "github:hercules-ci/flake-parts";
@@ -15,7 +15,7 @@
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [ "x86_64-linux" ];
 
-      flake.flakeModules.default = ./boreal-nix;
+      flake.flakeModules.default = ./lib;
     };
 }
 

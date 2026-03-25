@@ -2,7 +2,7 @@
 
 {
   options = {
-    flake.fractal = {
+    flake.igloo = {
       networkName = lib.mkOption {
         type = lib.types.str;
         default = "nixos";
@@ -72,7 +72,7 @@
   };
 
   config = let
-    flakeCfg = config.flake.fractal;
+    flakeCfg = config.flake.igloo;
     scanDirs = import ./scanDirs.nix { inherit lib; };
     mkUser = import ./mkUser.nix { inherit inputs lib flakeCfg scanDirs; };
     mkNixosConfigurations = import ./mkHost.nix { inherit inputs lib flakeCfg mkUser scanDirs; };
@@ -81,7 +81,7 @@
   in {
     flake = {
       nixosConfigurations = mkNixosConfigurations;
-      
+
       overlays = {
         default = import "${self}/${flakeCfg.paths.overlays}" { inherit inputs; };
       };
